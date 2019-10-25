@@ -63,13 +63,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title_container">
+					<div class="section_title_container section_title_container1">
 						<div class="section_title"><h2>Who are we?</h2></div>
 						<p>We specialize on premium quality 100% virgin Vietnamese hair, Our hair products are high quality and prestigious ones that are collected directly from young Vietnamese women without dyed process or soaking in chemicals. The striking features about our hair is that it is soft, silky, shiny and it can be used for different purposes.</p>
 					</div>
 				</div>
             </div>
-            <div class="row who-are-we">
+            <div class="row">
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h2>Our vision</h2></div>
@@ -77,25 +77,98 @@
                     </div>
                 </div>
             </div>
-            <div class="row who-are-we">
+            <div class="row">
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h2>About our hair</h2></div>
                         <p>Vietnamese women hair is considered one of the world's most beautiful and quality hair,our company partners with the vietnamese company to collect hairs from different provinces of the coountry and then process into finsihed products according to customers' requirement and the standard that is for the international market.</p>
                     </div>
                 </div>
-            </div>
-            <div class="sales-reps-area" style="display:none;">
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title_container">
-                            <div class="section_title"><h2>Our sales representatives</h2></div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, tempora.</p>
-                        </div>
-                    </div>
-                </div>
 			</div>
-			<div class="row milestones_row">
+			{{-- sales rep area --}}
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container">
+						<div class="section_title"><h2>Our Sales representatives</h2></div>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sapiente quisquam eaque veritatis! Nulla, optio.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row sales-rep-area">
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep1.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep2.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep3.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep4.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep5.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 sales-rep">
+							<div class="card">
+								<img src="images/sales rep/sales_rep6.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link btn btn-primary">Send mail</a>
+									<a href="#" class="card-link btn btn-primary">Contact</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+            
+			<div class="row milestones_row" style="display: none;">
 				<div class="col">
 					
 					<!-- Milestones Slider -->

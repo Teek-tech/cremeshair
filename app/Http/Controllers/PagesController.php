@@ -15,8 +15,8 @@ class PagesController extends Controller
         return view('about');
     }
 
-    public function articles(){
-        return view('articles');
+    public function products(){
+        return view('products');
     }
 
     public function contact(){

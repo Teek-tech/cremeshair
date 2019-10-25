@@ -276,13 +276,21 @@ section
 	color: #1a1a1a;
 	line-height: 1.2;
 }
-.who-are-we
-{
-	margin-top: 40px !important;
-}
 .section_title h1 span
 {
 	color: #ffae00;
+}
+.section_title_container{
+	padding-top: 30px;
+}
+.sales-rep-area{
+	padding-top: 30px !important;
+}
+.sales-rep{
+	padding-top: 20px;
+}
+.section_title_container1{
+	padding-top: 0;
 }
 .section_title_container p
 {

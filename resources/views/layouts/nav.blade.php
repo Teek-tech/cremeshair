@@ -16,7 +16,7 @@
             <li><a href="{{asset('/')}}">Home<div><div></div><div></div><div></div></div></a></li>
                 <li><a href="{{asset('about')}}">About Us<div><div></div><div></div><div></div></div></a></li>
                 <!-- <li><a href="services.html">Services<div><div></div><div></div><div></div></div></a></li> -->
-                <li><a href="{{asset('articles')}}">Articles<div><div></div><div></div><div></div></div></a></li>
+                <li><a href="{{asset('products')}}">Products<div><div></div><div></div><div></div></div></a></li>
                 <!-- <li><a href="distributor_form.html">Become a distributor<div><div></div><div></div><div></div></div></a></li> -->
                 <li><a href="{{asset('contact')}}">Contact<div><div></div><div></div><div></div></div></a></li>
             </ul>
