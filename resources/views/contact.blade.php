@@ -26,7 +26,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background" data-image-src="images/contact.jpg"></div>
+		<div class="parallax_background" data-image-src="images/bg_images/products_landing.jpg"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -58,14 +58,14 @@
 				<!-- Logo -->
 				<div class="logo">
 					<a href="#">
-						<div>V<span>o</span>gue</div>
+						<div>Cr<span>ém</span>es</div>
 						<div>hair</div>
 					</a>
 				</div>
 				<div class="contact_list">
 					<ul>
 						<li class="text-center">
-							<div><span><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></span>4127 Raoul Wallenber4127 Raoul Wallen berg Place</div>
+							<div><span><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></span>31 Isiokpo Street, Dline, Port Harcourt</div>
 						</li>
 						<li class="text-center">
 							<div><span><img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik"></span>203-808-8613</div>
@@ -80,3 +80,7 @@
 	<!-- Footer -->
 
 	@include('layouts.footer')
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script src="{{asset('js/contact.js')}}"></script>
+</body>
+</html>

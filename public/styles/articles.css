@@ -1485,3 +1485,20 @@ section
 	font-weight: 500;
 	color: #454545;
 }
+
+.product-gallery{
+	margin-bottom: 20px !important;
+}
+
+.card-title{
+	color: #000000;
+	font-weight: 700;
+}
+
+.card-text{
+	color: #000000;
+}
+
+.prod_name{
+	text-align: center;
+}

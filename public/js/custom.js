@@ -36,6 +36,7 @@ $(document).ready(function()
 	initSvg();
 	initScrolling();
 	initServicesSlider();
+	initSingleSlider();
 	initTestimonialsSlider();
 	initParallax();
 
@@ -373,31 +374,57 @@ $(document).ready(function()
 		}
 	}
 
+	/* 
+
+	7. Init Popular Posts Slider
+
+	*/
+
+	function initSingleSlider()
+	{
+		if($('.single_slider').length)
+		{
+			var singleSlider = $('.single_slider');
+			singleSlider.owlCarousel(
+			{
+				items:1,
+				loop:true,
+				autoplay:true,
+				autoplayTimeout:8000,
+				autoplayHoverPause:true,
+				nav:false,
+				dots:false,
+				smartSpeed:1200
+			});
+		}
+	}
+
+	$('.my-fancy').fancybox();
 });
 
 
 // Distributorship form
-$(document).ready(function(){
-	$("#second_form").hide();
-	$("#third_form").hide();
-	$(".next_btn1").on("click", function(){
-		$("#first_form").hide();
-		$("#second_form").show();
-		$("#third_form").hide();
-	});
-	$(".prev_btn").on("click", function(){
-		$("#second_form").hide();
-		$("#first_form").show();
-		$("#third_form").hide();
-	});
-	$(".next_btn2").on("click", function(){
-		$("#second_form").hide();
-		$("#third_form").show();
-		$("#first_form").hide();
-	});
-	$(".prev_btn1").on("click", function(){
-		$("#third_form").hide();
-		$("#second_form").show();
-		$("#first_form").hide();
-	});
-});
+// $(document).ready(function(){
+// 	$("#second_form").hide();
+// 	$("#third_form").hide();
+// 	$(".next_btn1").on("click", function(){
+// 		$("#first_form").hide();
+// 		$("#second_form").show();
+// 		$("#third_form").hide();
+// 	});
+// 	$(".prev_btn").on("click", function(){
+// 		$("#second_form").hide();
+// 		$("#first_form").show();
+// 		$("#third_form").hide();
+// 	});
+// 	$(".next_btn2").on("click", function(){
+// 		$("#second_form").hide();
+// 		$("#third_form").show();
+// 		$("#first_form").hide();
+// 	});
+// 	$(".prev_btn1").on("click", function(){
+// 		$("#third_form").hide();
+// 		$("#second_form").show();
+// 		$("#first_form").hide();
+// 	});
+// });

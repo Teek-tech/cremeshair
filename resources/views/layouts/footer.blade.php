@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="parallax_background" data-image-src="images/footer.jpg"></div>
+    <div class="parallax_background" data-image-src="images/bg_images/footer.jpg"></div>
     <!-- <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/footer.jpg" data-speed="0.8"></div> -->
     <div class="footer_container">
         <div class="container">
@@ -87,10 +87,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{asset('plugins/progressbar/progressbar.min.js')}}"></script>
 <script src="{{asset('plugins/parallax-js-master/parallax.min.js')}}"></script>
 <script src="{{asset('plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
-<script src="{{asset('js/custom.js')}}"></script>
-<script src="{{asset('js/about.js')}}"></script>
-<script src="{{asset('js/articles.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="{{asset('js/contact.js')}}"></script>
-</body>
-</html>

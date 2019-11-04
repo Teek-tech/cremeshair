@@ -1272,3 +1272,27 @@ section
 	color: #454545;
 }
 
+.card-body{
+	text-align: center;
+}
+
+.card-body h5{
+	font-weight: 700;
+	color: #000;
+	margin-bottom: 0;
+}
+
+.rep_phone_icon{
+	height: 18px;
+	width: 18px;
+	margin-top: 2px;
+}
+
+.rep_phone, .rep_mail{
+	display: flex;
+	justify-content: center;
+}
+
+.rep_phone_text, .rep_mail_text{
+	padding-left: 5px;
+}

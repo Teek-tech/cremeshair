@@ -229,4 +229,15 @@ $(document).ready(function()
 		}
 	}
 
+	$('.my-fancy').fancybox({
+		//smallBtn: true,
+		arrows: false,
+		buttons: [
+			"zoom",
+			"slideShow",
+			"thumbs",
+			"close"
+		]
+	});
+
 });

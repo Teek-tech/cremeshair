@@ -25,7 +25,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background" data-image-src="images/about.jpg"></div>
+		<div class="parallax_background" data-image-src="images/bg_images/about_landing.jpg"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -59,7 +59,7 @@
 	<!-- Milestones -->
 
 	<div class="milestones_section">
-		<div class="parallax_background" data-image-src="images/milestones.jpg"></div>
+		<div class="parallax_background" data-image-src="images/bg_images/new_about.jpg"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -85,87 +85,7 @@
                     </div>
                 </div>
 			</div>
-			{{-- sales rep area --}}
-			<div class="row">
-				<div class="col">
-					<div class="section_title_container">
-						<div class="section_title"><h2>Our Sales representatives</h2></div>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sapiente quisquam eaque veritatis! Nulla, optio.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row sales-rep-area">
-				<div class="col-md-10">
-					<div class="row">
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep1.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep2.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep3.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep4.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep5.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 sales-rep">
-							<div class="card">
-								<img src="images/sales rep/sales_rep6.jpg" class="card-img-top" alt="...">
-								<div class="card-body">
-									<h5 class="card-title">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link btn btn-primary">Send mail</a>
-									<a href="#" class="card-link btn btn-primary">Contact</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 			
             
 			<div class="row milestones_row" style="display: none;">
@@ -318,6 +238,153 @@
 			</div>
 		</div>
 	</div>
-
+	<div class="col-md-12" style="background-color: white;">
+		<div class="container">
+				{{-- sales rep area --}}
+				<div class="row">
+					<div class="col">
+						<div class="section_title_container">
+							<div class="section_title"><h2>Our Sales representatives</h2></div>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sapiente quisquam eaque veritatis! Nulla, optio.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row sales-rep-area">
+					
+						<div class="row">
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep1.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep2.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep3.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep4.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep5.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="images/sales rep/sales_rep6.jpg" class="card-img-top" alt="...">
+									<div class="card-body">
+										{{-- <h5 class="card-title">Card title</h5> --}}
+										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+										<div class="rep_name">
+											<h5>Lorem Ipsum</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<P class="rep_phone_text">0111112332525</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+											<p class="rep_mail_text">blah@blah.com</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+		</div>
+	</div>
 	<!-- Footer -->
 @include('layouts.footer')
+<script src="{{asset('js/about.js')}}"></script>
+</body>
+</html>

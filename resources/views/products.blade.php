@@ -25,7 +25,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background" data-image-src="images/articles.jpg"></div>
+		<div class="parallax_background" data-image-src="images/bg_images/products_landing.jpg"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -115,7 +115,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" style="display: none;">
 				<div class="col">
 					<div class="articles_expander">
 						
@@ -126,7 +126,9 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_1.jpg" alt=""></div>
+										<div class="single_article_image">
+											<a class="my-fancy" href="images/products/product_2.jpg"><img src="images/products/product_1.jpg" alt=""></a>
+										</div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -146,7 +148,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_2.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_2.jpg"><img src="images/products/product_2.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -166,7 +168,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_3.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_3.jpg"><img src="images/products/product_3.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -186,7 +188,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_4.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_4.jpg"><img src="images/products/product_4.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -206,7 +208,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_5.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_5.jpg"><img src="images/products/product_5.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -226,7 +228,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_6.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_6.jpg"><img src="images/products/product_6.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -246,7 +248,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_7.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_7.jpg"><img src="images/products/product_7.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -266,7 +268,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_8.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_8.jpg"><img src="images/products/product_8.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -286,7 +288,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_9.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_9.jpg"><img src="images/products/product_9.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -306,7 +308,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_10.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_10.jpg"><img src="images/products/product_10.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -326,7 +328,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_11.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_11.jpg"><img src="images/products/product_11.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -346,7 +348,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_12.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_12.jpg"><img src="images/products/product_12.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -366,7 +368,7 @@
 								<!-- Slide -->
 								<div class="owl-item">
 									<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-										<div class="single_article_image"><img src="images/products/product_13.jpg" alt=""></div>
+										<div class="single_article_image"><a class="my-fancy" href="images/products/product_13.jpg"><img src="images/products/product_13.jpg" alt=""></a></div>
 										<div class="single_article_content">
 											{{-- <div class="sigle_article_date"><a href="#">06 sep 2018</a></div> --}}
 											<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
@@ -384,6 +386,190 @@
 								</div>
 
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_1.jpg"><img class="card-img-top" src="images/products/product_1.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_2.jpg"><img class="card-img-top" src="images/products/product_2.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_3.jpg"><img class="card-img-top" src="images/products/product_3.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_4.jpg"><img class="card-img-top" src="images/products/product_4.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_5.jpg"><img class="card-img-top" src="images/products/product_5.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_6.jpg"><img class="card-img-top" src="images/products/product_6.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_7.jpg"><img class="card-img-top" src="images/products/product_7.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_8.jpg"><img class="card-img-top" src="images/products/product_8.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_9.jpg"><img class="card-img-top" src="images/products/product_9.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_10.jpg"><img class="card-img-top" src="images/products/product_10.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_11.jpg"><img class="card-img-top" src="images/products/product_11.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_12.jpg"><img class="card-img-top" src="images/products/product_12.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card product-gallery">
+						<a data-fancybox="group" class="my-fancy" href="images/products/product_13.jpg"><img class="card-img-top" src="images/products/product_13.jpg" alt=""></a>
+						<div class="card-body">
+							<h5 class="card-title">Lorem Ipsum</h5>
+							<ul class="card-text">
+								<li>Color</li>
+								<li>Size</li>
+								<li>Length</li>
+								<li>Weight</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -393,149 +579,11 @@
 
 	<!-- Articles -->
 
-	<div class="articles" style="display: none;">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title_container">
-						<div class="section_title"><h1>Our Sales Representatives</h1></div>
-						<div class="section_subtitle">our sales representatives are available to ensure that our customers get quality service.</div>
-					</div>
-				</div>
-			</div>
-			<div class="row articles_container_row">
-				<div class="col">
-					<div class="section_expander">
-						<div class="articles_container d-flex flex-row align-items-start justify-content-between flex-wrap">
-							
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep1.jpg" alt=""></div>
-								<div class="article_container">
-									<!-- <div class="article_title_container d-flex flex-row align-items-start justify-content-start">
-										<div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div>
-										<div class="article_content">
-											<div class="article_date"><a href="#">06 sep 2018</a></div>
-											<div class="article_title"><a href="#">Lorem ipsum dolor sit amet, consectetur</a></div>
-											<div class="article_author"><a href="#">by Jane Doe</a></div>
-										</div>
-									</div>
-									<div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep2.jpg" alt=""></div>
-								<div id="sales_rep_container" class="article_container">
-									<div class="article_title_container">
-										<!-- <div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div> -->
-										<div class="article_content sales_rep">
-											<!-- <div class="article_date"><a href="#">06 sep 2018</a></div> -->
-											<div class="article_title sales_rep_name">Henrietta</div>
-											<div class="article_title sales_rep_email">henrietta@gmail.com</div>
-											<div class="article_title sales_rep_phone">01234567890</div>
-											<!-- <div class="article_author"><a href="#">by Jane Doe</a></div> -->
-										</div>
-									</div>
-									<!-- <div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep3.jpg" alt=""></div>
-								<div class="article_container">
-									<!-- <div class="article_title_container d-flex flex-row align-items-start justify-content-start">
-										<div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div>
-										<div class="article_content">
-											<div class="article_date"><a href="#">06 sep 2018</a></div>
-											<div class="article_title"><a href="#">Estibulum ante ipsum primis</a></div>
-											<div class="article_author"><a href="#">by Jane Doe</a></div>
-										</div>
-									</div>
-									<div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep4.jpg" alt=""></div>
-								<div class="article_container">
-									<!-- <div class="article_title_container d-flex flex-row align-items-start justify-content-start">
-										<div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div>
-										<div class="article_content">
-											<div class="article_date"><a href="#">06 sep 2018</a></div>
-											<div class="article_title"><a href="#">Curabitur velit diam, blandit quis </a></div>
-											<div class="article_author"><a href="#">by Jane Doe</a></div>
-										</div>
-									</div>
-									<div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep5.jpg" alt=""></div>
-								<div class="article_container">
-									<!-- <div class="article_title_container d-flex flex-row align-items-start justify-content-start">
-										<div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div>
-										<div class="article_content">
-											<div class="article_date"><a href="#">06 sep 2018</a></div>
-											<div class="article_title"><a href="#">Suspendisse vel ligula sed selit</a></div>
-											<div class="article_author"><a href="#">by Jane Doe</a></div>
-										</div>
-									</div>
-									<div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-							<!-- Article -->
-							<div class="article">
-								<div class="article_image"><img src="images/sales rep/sales_rep6.jpg" alt=""></div>
-								<div class="article_container">
-									<!-- <div class="article_title_container d-flex flex-row align-items-start justify-content-start">
-										<div><div class="article_author_image"><a href="#"><img src="images/article_author_1.jpg" alt=""></a></div></div>
-										<div class="article_content">
-											<div class="article_date"><a href="#">06 sep 2018</a></div>
-											<div class="article_title"><a href="#">Donec egestas egestas quam non</a></div>
-											<div class="article_author"><a href="#">by Jane Doe</a></div>
-										</div>
-									</div>
-									<div class="article_text">
-										<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor.</p>
-									</div>
-									<div class="article_link"><a href="#">continue reading</a></div> -->
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- <div class="row">
-				<div class="col">
-					<div class="load_more_button ml-auto mr-auto"><a href="#">load more</a></div>
-				</div>
-			</div> -->
-		</div>
-	</div>
 
 	<!-- Footer -->
 
 	@include('layouts.footer')
+	<script src="{{asset('js/jquery.fancybox.min.js')}}"></script>
+	<script src="{{asset('js/articles.js')}}"></script>
+</body>
+</html>
