@@ -22,3 +22,17 @@ Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('products', 'PagesController@products');
 Route::get('contact', 'PagesController@contact');
+
+// admin page routes
+//Route::group(['namespace'=>'web', 'middlware'=>['auth']], function(){
+Route::get('admin', 'AdminPagesController@admin');
+Route::get('pagesHome', 'AdminPagesController@pagesHome');
+Route::get('pagesAbout', 'AdminPagesController@pagesAbout');
+Route::get('pagesProducts', 'AdminPagesController@pagesProducts');
+Route::get('pagesContact', 'AdminPagesController@pagesContact');
+Route::get('adminProducts', 'AdminPagesController@adminProducts');
+Route::get('adminSalesRep', 'AdminPagesController@salesRep');
+Route::get('adminCharts', 'AdminPagesController@adminCharts');
+Route::get('adminTables', 'AdminPagesController@adminTables');
+//});
+
