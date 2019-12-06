@@ -26,7 +26,6 @@ Route::get('contact', 'PagesController@contact');
 // admin page routes
 //Route::group(['namespace'=>'web', 'middlware'=>['auth']], function(){
 Route::get('admin', 'AdminPagesController@admin');
-Route::get('pagesHome', 'AdminPagesController@pagesHome');
 Route::get('pagesAbout', 'AdminPagesController@pagesAbout');
 Route::get('pagesProducts', 'AdminPagesController@pagesProducts');
 Route::get('pagesContact', 'AdminPagesController@pagesContact');
@@ -36,3 +35,5 @@ Route::get('adminCharts', 'AdminPagesController@adminCharts');
 Route::get('adminTables', 'AdminPagesController@adminTables');
 //});
 
+Route::get('admin/home', 'HomePageController@index')->name('admin.home.page');
+Route::post('admin/home', 'HomePageController@save')->name('admin.home.save');

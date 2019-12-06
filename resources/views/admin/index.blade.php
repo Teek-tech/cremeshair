@@ -95,7 +95,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           {{-- <h6 class="dropdown-header">Home Page:</h6> --}}
-          <a class="dropdown-item" href="{{asset('pagesHome')}}">Home Page</a>
+          <a class="dropdown-item" href="{{route('admin.home.page')}}">Home Page</a>
           <a class="dropdown-item" href="{{asset('pagesAbout')}}">About us Page</a>
           <a class="dropdown-item" href="{{asset('pagesProducts')}}">Products page</a>
           <a class="dropdown-item" href="{{asset('pagesContact')}}">Contact Page</a>
