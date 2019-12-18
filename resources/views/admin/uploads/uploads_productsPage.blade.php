@@ -56,7 +56,8 @@
           <li class="breadcrumb-item">
           <a href="{{asset('admin')}}">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Products</li>
+          <li class="breadcrumb-item active">Uploads</li>
+          <li class="breadcrumb-item active">Product Page</li>
         </ol>
 
         <!-- DataTables Example -->
@@ -74,7 +75,7 @@
                     <th>Size</th>
                     <th>Weight</th>
                     <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -84,18 +85,21 @@
                     <th>Size</th>
                     <th>Weight</th>
                     <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  @foreach ($getProductPageContent as $product)
+                  @foreach($getProductPageContent as $product)
                   <tr>
-                  <td>{{$product->name}}</td>
+                    <td>{{$product->name}}</td>
                     <td>{{$product->color}}</td>
                     <td>{{$product->size}}</td>
                     <td>{{$product->weight}}</td>
                     <td>{{$product->length}}</td>
-                    {{-- <td>$320,800</td> --}}
+                    <td>
+                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="" class="btn btn-danger">Delete</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

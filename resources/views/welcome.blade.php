@@ -41,8 +41,10 @@
 					<div class="slide_container">
 						<div class="container">
 							<div class="row">
+								
 								<div class="col-lg-11">
 									<div class="slide_content" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOut">
+										
 										<div class="home_title"><h1>The <span>hair</span> that you dream</h1></div>
 										<div class="home_text">
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien cursus faucibus finibus.</p>
@@ -50,6 +52,7 @@
 										<div class="home_link"><a href="services.html">View our offers</a></div>
 									</div>
 								</div>
+							
 							</div>
 						</div>
 					</div>

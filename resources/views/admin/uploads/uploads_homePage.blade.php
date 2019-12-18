@@ -56,7 +56,8 @@
           <li class="breadcrumb-item">
           <a href="{{asset('admin')}}">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Products</li>
+          <li class="breadcrumb-item active">Uploads</li>
+          <li class="breadcrumb-item active">Home Page</li>
         </ol>
 
         <!-- DataTables Example -->
@@ -69,33 +70,36 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Weight</th>
-                    <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Rank</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Weight</th>
-                    <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Category</th>
+                    <th>Rank</th>
+                    <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  @foreach ($getProductPageContent as $product)
+                  @foreach($getHomePageContent as $content)
                   <tr>
-                  <td>{{$product->name}}</td>
-                    <td>{{$product->color}}</td>
-                    <td>{{$product->size}}</td>
-                    <td>{{$product->weight}}</td>
-                    <td>{{$product->length}}</td>
-                    {{-- <td>$320,800</td> --}}
+                  <td>{{$content->title}}</td>
+                  <td>{{$content->description}}</td>
+                  <td>blah blah</td>
+                  <td>{{$content->category}}</td>
+                  <td>{{$content->rank}}</td>
+                  <td>
+                    <a href="" class="btn btn-warning">Edit</a>
+                    <a href="" class="btn btn-danger">Delete</a>
+                  </td>
                   </tr>
                   @endforeach
                 </tbody>

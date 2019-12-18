@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomePage;
+use App\Models\SalesRepPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class HomePageController extends Controller
+class SalesRepPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.home-page');
+        return view('admin.pages.pages_salesRep');
     }
 
     /**
@@ -37,31 +37,31 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
-        $content = new HomePage;
-        $content->title = $request->input('title');
-        $content->description = $request->input('description');
-        $content->category = $request->input('category');
-        
+        //
+        $salesRep = new SalesRepPage;
+        $salesRep->name = $request->input('name');
+        $salesRep->email = $request->input('email');
+        $salesRep->phone = $request->input('phone');
+
         if($request->hasFile('image')){
             $image = $request->file('image');
-            $contentImage = $content->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->save( public_path('/images/home_page/' . $contentImage ) );
-            $content->image = $contentImage;
+            $salesRepImage = $salesRep->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/sales_rep/' . $salesRepImage ) );
+            $salesRep->image = $salesRepImage;
         };
 
-        $content->rank = $request->input('rank');
-        //dd($content);
-        $content->save();
+        //dd($salesRep);
+        $salesRep->save();
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function show(HomePage $homePage)
+    public function show(SalesRepPage $salesRepPage)
     {
         //
     }
@@ -69,10 +69,10 @@ class HomePageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomePage $homePage)
+    public function edit(SalesRepPage $salesRepPage)
     {
         //
     }
@@ -81,10 +81,10 @@ class HomePageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\HomePage  $homePage
+     * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomePage $homePage)
+    public function update(Request $request, SalesRepPage $salesRepPage)
     {
         //
     }
@@ -92,10 +92,10 @@ class HomePageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomePage $homePage)
+    public function destroy(SalesRepPage $salesRepPage)
     {
         //
     }

@@ -38,89 +38,14 @@
     </form>
 
     <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger">7</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
-    </ul>
+    @include('admin.layouts.navbar')
 
   </nav>
 
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item">
-      <a class="nav-link" href="{{('admin')}}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          {{-- <h6 class="dropdown-header">Login Screens:</h6> --}}
-          <a class="dropdown-item" href="{{asset('pagesHome')}}">Home Page</a>
-          <a class="dropdown-item" href="{{asset('pagesAbout')}}">About us Page</a>
-          <a class="dropdown-item" href="{{asset('pagesProducts')}}">Products page</a>
-          <a class="dropdown-item" href="{{asset('pagesContact')}}">Contact Page</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{asset('adminProducts')}}">
-          <i class="fas fa-boxes"></i>
-          <span>Products</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{asset('adminSalesRep')}}">
-          <i class="fas fa-users"></i>
-          <span>Sales Representative</span></a>
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li> --}}
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li> --}}
-    </ul>
+  <!-- sidebar -->
+  @include('admin.layouts.sidebar')
 
     <div id="content-wrapper">
 
@@ -142,12 +67,17 @@
             <div class="home_page_slide_1 mb-5">
               <div class="main-txt mb-3">
                 <form action="{{route('admin.home.save')}}" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <div class="row">
                     <div class=" form-group col-md-6">
                       <label for="">Enter Title</label>
                       <input type="text" name="title" class="form-control" placeholder="Enter Big Header Title">
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
+                      <label for="image">Add Image</label>
+                      <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="form-group col-md-2">
                       <label for="">Rank</label>
                       <select name="rank" id=""  class="form-control">
                         <option label="Choose"></option>
@@ -163,14 +93,14 @@
                         <option value="3">10</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                       <label for="">Category</label>
-                      <select name="rank" id=""  class="form-control">
+                      <select name="category" id=""  class="form-control">
                        <option label="Choose"></option>
                         <option value="home">Home</option>
-                        <option value="services">1</option>
-                        <option value="products">2</option>
-                        <option value="testimonials">3</option>
+                        <option value="services">Services</option>
+                        <option value="products">Products</option>
+                        <option value="testimonials">Testimonials</option>
                       </select>
                     </div>
                   </div>
@@ -189,7 +119,7 @@
             <!-- home page slider 3 end -->
           </div>
 
-          <div class="services_page mb-5">
+          <div class="services_page mb-5" style="display:none;">
             <h5>Change Services section Text</h5>
             <div class="home_page_slide_1 mb-5">
               <h4>Services</h4>
@@ -225,10 +155,11 @@
             </div>
           </div>
 
-          <div class="products_area mb-5">
+          <div class="products_area mb-5" style="display:none;">
             <h5>Add Products</h5>
             <div>
-              <form action="">
+              <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="product-name">Product Name</label>
@@ -257,12 +188,12 @@
                     <textarea name="product-description" class="form-control" cols="30" rows="5"></textarea>
                   </div>
                 </div>
-                <button class="btn btn-primary">Add Product</button>
+                <button type="submit" class="btn btn-primary">Add Product</button>
               </form>
             </div>
           </div>
 
-          <div class="testimonial_area mb-5">
+          <div class="testimonial_area mb-5" style="display:none;">
             <h5>Add customer feedback</h5>
             <div>
               <form action="">

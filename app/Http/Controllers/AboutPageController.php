@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomePage;
+use App\Models\AboutPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class HomePageController extends Controller
+class AboutPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.home-page');
+        return view('admin.pages.pages_about');
+
     }
 
     /**
@@ -37,19 +38,19 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
-        $content = new HomePage;
+        //
+        $content = new AboutPage;
         $content->title = $request->input('title');
         $content->description = $request->input('description');
         $content->category = $request->input('category');
-        
+
         if($request->hasFile('image')){
             $image = $request->file('image');
             $contentImage = $content->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->save( public_path('/images/home_page/' . $contentImage ) );
+            Image::make($image)->save( public_path('/images/about_page/' . $contentImage ) );
             $content->image = $contentImage;
         };
 
-        $content->rank = $request->input('rank');
         //dd($content);
         $content->save();
         return back();
@@ -58,10 +59,10 @@ class HomePageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function show(HomePage $homePage)
+    public function show(AboutPage $aboutPage)
     {
         //
     }
@@ -69,10 +70,10 @@ class HomePageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomePage $homePage)
+    public function edit(AboutPage $aboutPage)
     {
         //
     }
@@ -81,10 +82,10 @@ class HomePageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\HomePage  $homePage
+     * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomePage $homePage)
+    public function update(Request $request, AboutPage $aboutPage)
     {
         //
     }
@@ -92,10 +93,10 @@ class HomePageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomePage $homePage)
+    public function destroy(AboutPage $aboutPage)
     {
         //
     }

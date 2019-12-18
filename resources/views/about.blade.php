@@ -254,7 +254,7 @@
 						<div class="row">
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep1.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep1.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
@@ -275,7 +275,7 @@
 							</div>
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep2.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep2.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
@@ -296,7 +296,7 @@
 							</div>
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep3.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep3.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
@@ -317,7 +317,7 @@
 							</div>
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep4.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep4.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
@@ -338,7 +338,7 @@
 							</div>
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep5.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep5.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
@@ -359,7 +359,7 @@
 							</div>
 							<div class="col-md-4 sales-rep">
 								<div class="card">
-									<img src="images/sales rep/sales_rep6.jpg" class="card-img-top" alt="...">
+									<img src="images/sales_rep/sales_rep6.jpg" class="card-img-top" alt="...">
 									<div class="card-body">
 										{{-- <h5 class="card-title">Card title</h5> --}}
 										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}

@@ -56,7 +56,8 @@
           <li class="breadcrumb-item">
           <a href="{{asset('admin')}}">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Products</li>
+          <li class="breadcrumb-item active">Uploads</li>
+          <li class="breadcrumb-item active">Contact Page</li>
         </ol>
 
         <!-- DataTables Example -->
@@ -69,33 +70,30 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Weight</th>
-                    <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Date/Time</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Weight</th>
-                    <th>Length</th>
-                    {{-- <th>Action</th> --}}
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Date/Time</th>
+                    <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  @foreach ($getProductPageContent as $product)
+                  @foreach($getContactPageContent as $contact)
                   <tr>
-                  <td>{{$product->name}}</td>
-                    <td>{{$product->color}}</td>
-                    <td>{{$product->size}}</td>
-                    <td>{{$product->weight}}</td>
-                    <td>{{$product->length}}</td>
-                    {{-- <td>$320,800</td> --}}
+                    <td>{{$contact->address}}</td>
+                    <td>{{$contact->phone}}</td>
+                    <td>{{$contact->update_at}}</td>
+                    <td>
+                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="" class="btn btn-danger">Delete</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

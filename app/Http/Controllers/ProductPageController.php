@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomePage;
+use App\Models\ProductPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class HomePageController extends Controller
+class ProductPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.home-page');
+        return view('admin.pages.pages_products');
     }
 
     /**
@@ -37,31 +37,33 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
-        $content = new HomePage;
-        $content->title = $request->input('title');
-        $content->description = $request->input('description');
-        $content->category = $request->input('category');
-        
+        //
+        $product = new ProductPage;
+        $product->name = $request->input('name');
+        $product->color = $request->input('color');
+        $product->size = $request->input('size');
+        $product->weight = $request->input('weight');
+        $product->length = $request->input('length');
+
         if($request->hasFile('image')){
             $image = $request->file('image');
-            $contentImage = $content->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->save( public_path('/images/home_page/' . $contentImage ) );
-            $content->image = $contentImage;
+            $productImage = $product->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/products/' . $productImage ) );
+            $product->image = $productImage;
         };
 
-        $content->rank = $request->input('rank');
-        //dd($content);
-        $content->save();
+        // dd($product);
+        $product->save();
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function show(HomePage $homePage)
+    public function show(ProductPage $productPage)
     {
         //
     }
@@ -69,10 +71,10 @@ class HomePageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomePage $homePage)
+    public function edit(ProductPage $productPage)
     {
         //
     }
@@ -81,10 +83,10 @@ class HomePageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\HomePage  $homePage
+     * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomePage $homePage)
+    public function update(Request $request, ProductPage $productPage)
     {
         //
     }
@@ -92,10 +94,10 @@ class HomePageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\HomePage  $homePage
+     * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomePage $homePage)
+    public function destroy(ProductPage $productPage)
     {
         //
     }
