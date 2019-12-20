@@ -97,7 +97,7 @@
                     <td>{{$product->weight}}</td>
                     <td>{{$product->length}}</td>
                     <td>
-                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="{{route('admin.edit.products_content', $product->id)}}" class="btn btn-info">Edit</a>
                       <a href="" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>

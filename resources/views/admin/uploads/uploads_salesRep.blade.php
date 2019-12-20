@@ -94,7 +94,7 @@
                     <td>{{$salesRep->email}}</td>
                     <td>{{$salesRep->phone}}</td>
                     <td>
-                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="{{route('admin.edit.salesRep_content', $salesRep->id)}}" class="btn btn-info">Edit</a>
                       <a href="" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>

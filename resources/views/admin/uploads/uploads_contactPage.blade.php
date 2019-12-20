@@ -89,9 +89,9 @@
                   <tr>
                     <td>{{$contact->address}}</td>
                     <td>{{$contact->phone}}</td>
-                    <td>{{$contact->update_at}}</td>
+                    <td>{{$contact->updated_at}}</td>
                     <td>
-                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="{{route('admin.edit.contact_content', $contact->id)}}" class="btn btn-info">Edit</a>
                       <a href="" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>

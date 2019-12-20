@@ -94,7 +94,7 @@
                     <td>{{$content->description}}</td>
                     <td>{{$content->category}}</td>
                     <td>
-                      <a href="" class="btn btn-warning">Edit</a>
+                      <a href="{{route('admin.edit.about_page_content', $content->id)}}" class="btn btn-info">Edit</a>
                       <a href="" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>

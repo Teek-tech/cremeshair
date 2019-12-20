@@ -41,7 +41,7 @@ class SalesRepPageController extends Controller
         $salesRep = new SalesRepPage;
         $salesRep->name = $request->input('name');
         $salesRep->email = $request->input('email');
-        $salesRep->phone = $request->input('phone');
+        $salesRep->image = $request->input('image');
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -72,9 +72,11 @@ class SalesRepPageController extends Controller
      * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(SalesRepPage $salesRepPage)
+    public function edit($id)
     {
         //
+        $getId = SalesRepPage::findOrFail($id);
+        return view('admin.edit.edit_salesRep', compact('getId'));
     }
 
     /**
@@ -84,9 +86,15 @@ class SalesRepPageController extends Controller
      * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SalesRepPage $salesRepPage)
+    public function update(Request $request, $id)
     {
-        //
+        $getId = SalesRepPage::findOrFail($id);
+        $getId->name = $request->input('name');
+        $getId->image = $request->input('image');
+        $getId->email = $request->input('email');
+        $getId->phone = $request->input('phone');
+        $getId->save();
+        return back();
     }
 
     /**

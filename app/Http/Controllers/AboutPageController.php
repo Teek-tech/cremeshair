@@ -73,9 +73,11 @@ class AboutPageController extends Controller
      * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(AboutPage $aboutPage)
+    public function edit($id)
     {
         //
+        $getId = AboutPage::findOrFail($id);
+        return view('admin.edit.edit_about', compact('getId'));
     }
 
     /**
@@ -85,9 +87,16 @@ class AboutPageController extends Controller
      * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AboutPage $aboutPage)
+    public function update(Request $request, $id)
     {
         //
+        $getId = AboutPage::findOrFail($id);
+        $getId->title = $request->input('title');
+        $getId->image = $request->input('image');
+        $getId->category = $request->input('category');
+        $getId->description = $request->input('description');
+        $getId->save();
+        return back();
     }
 
     /**

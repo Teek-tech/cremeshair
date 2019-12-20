@@ -66,9 +66,11 @@ class ContactPageController extends Controller
      * @param  \App\ContactPage  $contactPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactPage $contactPage)
+    public function edit($id)
     {
         //
+        $getId = ContactPage::findOrFail($id);
+        return view('admin.edit.edit_contact', compact('getId'));
     }
 
     /**
@@ -78,9 +80,13 @@ class ContactPageController extends Controller
      * @param  \App\ContactPage  $contactPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactPage $contactPage)
+    public function update(Request $request, $id)
     {
-        //
+        $getId = ContactPage::findOrFail($id);
+        $getId->address = $request->input('address');
+        $getId->phone = $request->input('phone');
+        $getId->save();
+        return back();
     }
 
     /**

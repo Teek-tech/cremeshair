@@ -74,9 +74,11 @@ class ProductPageController extends Controller
      * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductPage $productPage)
+    public function edit($id)
     {
         //
+        $getId = ProductPage::findOrFail($id);
+        return view('admin.edit.edit_products', compact('getId'));
     }
 
     /**
@@ -86,9 +88,17 @@ class ProductPageController extends Controller
      * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductPage $productPage)
+    public function update(Request $request, $id)
     {
-        //
+        $getId = ProductPage::findOrFail($id);
+        $getId->image = $request->input('image');
+        $getId->name = $request->input('name');
+        $getId->color = $request->input('color');
+        $getId->size = $request->input('size');
+        $getId->weight = $request->input('weight');
+        $getId->length = $request->input('length');
+        $getId->save();
+        return back();
     }
 
     /**

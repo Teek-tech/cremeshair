@@ -72,9 +72,11 @@ class HomePageController extends Controller
      * @param  \App\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomePage $homePage)
+    public function edit($id)
     {
         //
+        $getId = HomePage::findOrFail($id);
+        return view('admin.edit.edit_home', compact('getId'));
     }
 
     /**
@@ -84,9 +86,17 @@ class HomePageController extends Controller
      * @param  \App\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomePage $homePage)
+    public function update(Request $request, $id)
     {
         //
+        $getId = HomePage::findOrFail($id);
+        $getId->title = $request->input('title');
+        $getId->description = $request->input('description');
+        $getId->category = $request->input('category');
+        $getId->image = $request->input('image');
+        $getId->rank = $request->input('rank');
+        $getId->save();
+        return back();
     }
 
     /**
