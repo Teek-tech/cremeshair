@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use File;
 use App\Models\HomePage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -16,7 +16,7 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.home-page');
+        return view('admin.home.homePage_create');
     }
 
     /**
@@ -41,6 +41,7 @@ class HomePageController extends Controller
         $content->title = $request->input('title');
         $content->description = $request->input('description');
         $content->category = $request->input('category');
+        $content->client_name = $request->input('client_name');
         
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -52,7 +53,7 @@ class HomePageController extends Controller
         $content->rank = $request->input('rank');
         //dd($content);
         $content->save();
-        return back();
+        return back()->with('success', 'content added');
     }
 
     /**
@@ -76,7 +77,7 @@ class HomePageController extends Controller
     {
         //
         $getId = HomePage::findOrFail($id);
-        return view('admin.edit.edit_home', compact('getId'));
+        return view('admin.home.homePage_edit', compact('getId'));
     }
 
     /**
@@ -93,10 +94,24 @@ class HomePageController extends Controller
         $getId->title = $request->input('title');
         $getId->description = $request->input('description');
         $getId->category = $request->input('category');
+        $getId->client_name = $request->input('client_name');
         $getId->image = $request->input('image');
         $getId->rank = $request->input('rank');
+
+        if($request->hasFile('image')){
+            $oldImage = '/images/home_page/'.$getId->image;
+            if(File::exists($oldImage)){
+                File::delete($oldImage);
+            }
+            $image = $request->file('image');
+            $contentImage = $getId->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/home_page/' . $contentImage ) );
+            $getId->image = $contentImage;
+
+        }
+
         $getId->save();
-        return back();
+        return back()->with('success', 'content updated');
     }
 
     /**
@@ -105,8 +120,11 @@ class HomePageController extends Controller
      * @param  \App\HomePage  $homePage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomePage $homePage)
+    public function destroy($id)
     {
         //
+        $getId = HomePage::findOrFail($id);
+        $getId->delete();
+        return redirect('admin/pages/Indexhome')->with('delete', 'content removed');
     }
 }

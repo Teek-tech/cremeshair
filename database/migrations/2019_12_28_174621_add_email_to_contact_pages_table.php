@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactPagesTable extends Migration
+class AddEmailToContactPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateContactPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_pages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('address')->nullable();
-            $table->string('phone')->nullable();
-            $table->timestamps();
+        Schema::table('contact_pages', function (Blueprint $table) {
+            $table->string('email')->nullable()->after('phone');
         });
     }
 
@@ -28,6 +25,9 @@ class CreateContactPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_pages');
+        Schema::table('contact_pages', function (Blueprint $table) {
+            $table->dropColumn('email');
+
+        });
     }
 }

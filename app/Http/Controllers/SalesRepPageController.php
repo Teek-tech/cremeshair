@@ -16,7 +16,7 @@ class SalesRepPageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.pages_salesRep');
+        return view('admin.salesRep.salesRep_create');
     }
 
     /**
@@ -37,11 +37,17 @@ class SalesRepPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:sales_rep_pages',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+        ]);
+
         $salesRep = new SalesRepPage;
         $salesRep->name = $request->input('name');
         $salesRep->email = $request->input('email');
-        $salesRep->image = $request->input('image');
+        $salesRep->phone = $request->input('phone');
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -52,7 +58,7 @@ class SalesRepPageController extends Controller
 
         //dd($salesRep);
         $salesRep->save();
-        return back();
+        return back()->with('success', 'Sales representative added');
     }
 
     /**
@@ -76,7 +82,7 @@ class SalesRepPageController extends Controller
     {
         //
         $getId = SalesRepPage::findOrFail($id);
-        return view('admin.edit.edit_salesRep', compact('getId'));
+        return view('admin.salesRep.salesRep_edit', compact('getId'));
     }
 
     /**
@@ -93,8 +99,20 @@ class SalesRepPageController extends Controller
         $getId->image = $request->input('image');
         $getId->email = $request->input('email');
         $getId->phone = $request->input('phone');
+
+        if($request->hasFile('image')){
+            $oldImage = '/images/sales_rep/'.$getId->image;
+            if(File::exists($oldImage)){
+                File::delete($oldImage);
+            }
+            $image = $request->file('image');
+            $contentImage = $getId->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/sales_rep/' . $contentImage ) );
+            $getId->image = $contentImage;
+
+        }
         $getId->save();
-        return back();
+        return back()->with('success', 'Sales representative details updated');
     }
 
     /**
@@ -103,8 +121,11 @@ class SalesRepPageController extends Controller
      * @param  \App\SalesRepPage  $salesRepPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SalesRepPage $salesRepPage)
+    public function destroy($id)
     {
         //
+        $getId = SalesRepPage::findOrFail($id);
+        $getId->delete();
+        return redirect('admin/pages/IndexsalesRep')->with('delete', 'Sales representative removed');
     }
 }

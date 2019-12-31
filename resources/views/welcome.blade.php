@@ -34,22 +34,21 @@
 				<!-- Slide -->
 				<div class="owl-item home_slide">
 					<div class="background_image" style="background-image:url(images/bg_images/landing_page.jpg)"></div>
-					<!-- <div class="slide_text" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-						<div class="slide_title">Our best offers</div>
-						<div class="slide_subtitle">Lorem ipsum dolor sit amet, consectetur</div>
-					</div> -->
 					<div class="slide_container">
 						<div class="container">
 							<div class="row">
-								
 								<div class="col-lg-11">
 									<div class="slide_content" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOut">
 										
 										<div class="home_title"><h1>The <span>hair</span> that you dream</h1></div>
 										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien cursus faucibus finibus.</p>
+											@if($getMainHomeContent != "")
+												<p>{{$getMainHomeContent->description}}</p>
+											@else
+												<p>Oops! no post found!</p>
+											@endif
 										</div>
-										<div class="home_link"><a href="services.html">View our offers</a></div>
+										<div class="home_link"><a href="{{asset('products')}}">View our products</a></div>
 									</div>
 								</div>
 							
@@ -61,10 +60,6 @@
 				<!-- Slide -->
 				<div class="owl-item home_slide">
 					<div class="background_image" style="background-image:url(images/bg_images/landing_page.jpg)"></div>
-					<!-- <div class="slide_text" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-						<div class="slide_title">Our best offers</div>
-						<div class="slide_subtitle">Lorem ipsum dolor sit amet, consectetur</div>
-					</div> -->
 					<div class="slide_container">
 						<div class="container">
 							<div class="row">
@@ -72,9 +67,13 @@
 									<div class="slide_content" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOut">
 										<div class="home_title"><h1>The <span>hair</span> that you dream</h1></div>
 										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien cursus faucibus finibus.</p>
+											@if($getMainHomeContent != "")
+												<p>{{$getMainHomeContent->description}}</p>
+											@else
+												<p>Oops! no post found!</p>
+											@endif
 										</div>
-										<div class="home_link"><a href="services.html">View our offers</a></div>
+										<div class="home_link"><a href="{{asset('products')}}">View our products</a></div>
 									</div>
 								</div>
 							</div>
@@ -85,10 +84,6 @@
 				<!-- Slide -->
 				<div class="owl-item home_slide">
 					<div class="background_image" style="background-image:url(images/bg_images/landing_page.jpg)"></div>
-					<!-- <div class="slide_text" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-						<div class="slide_title">Our best offers</div>
-						<div class="slide_subtitle">Lorem ipsum dolor sit amet, consectetur</div>
-					</div> -->
 					<div class="slide_container">
 						<div class="container">
 							<div class="row">
@@ -96,9 +91,13 @@
 									<div class="slide_content" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOut">
 										<div class="home_title"><h1>The <span>hair</span> that you dream</h1></div>
 										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien cursus faucibus finibus.</p>
+											@if($getMainHomeContent != "")
+												<p>{{$getMainHomeContent->description}}</p>
+											@else
+												<p>Oops! no post found!</p>
+											@endif
 										</div>
-										<div class="home_link"><a href="services.html">View our offers</a></div>
+										<div class="home_link"><a href="{{asset('products')}}">View our products</a></div>
 									</div>
 								</div>
 							</div>
@@ -114,12 +113,6 @@
 			<div class="scroll_icon"></div>
 			<div>Scroll Down</div>
 		</div>
-
-		<!-- Slider Progress -->
-		<!-- <div class="slide_progress">
-			<div class="slide_num">01.</div>
-			<div class="slide_bar"><div></div></div>
-		</div> -->
 	</div>
 
 	<!-- Services -->
@@ -142,87 +135,25 @@
 						<!-- Services Slider -->
 						<div class="services_slider_container">
 							<div class="owl-carousel owl-theme services_slider">
-								
-								<!-- Slide -->
-								<div class="owl-item">
-
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon"><div><img src="images/mirror.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Hair Dressing</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
+								@if(!$getServicesContent->isEmpty())
+									@foreach ($getServicesContent as $service)
+									<!-- Slide -->
+									<div class="owl-item">
+										<!-- Service -->
+										<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
+											<div class="service_icon"><div><img src="images/mirror.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
+											<div class="service_content">
+												<div class="service_title trans_200">{{$service->title}}</div>
+												<div class="service_text trans_200">
+												<p>{{$service->description}}</p>
+												</div>
 											</div>
 										</div>
 									</div>
-
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon"><div><img src="images/facial-mask.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Ombre Hair</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item">
-									
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon"><div><img src="images/makeup.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Hair Coloring</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
-											</div>
-										</div>
-									</div>
-
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon service_icon_2"><div><img src="images/cream.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Treatments</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item">
-									
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon service_icon_flip"><div><img src="images/make-up.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Cutting & Trimming</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
-											</div>
-										</div>
-									</div>
-
-									<!-- Service -->
-									<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-										<div class="service_icon service_icon_3"><div><img src="images/cream-2.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-										<div class="service_content">
-											<div class="service_title trans_200">Keratin Streightening</div>
-											<div class="service_text trans_200">
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui ferme ntum eros hendrerit, id lobortis.</p>
-											</div>
-										</div>
-									</div>
-
-								</div>
+									@endforeach
+								@else
+									<p class="owl-item" style="color:black;">Oops! No Post Found!!</p>
+								@endif
 							</div>
 						</div>
 					</div>
@@ -238,7 +169,6 @@
 				<div class="col">
 					<div class="section_title_container">
 						<div class="section_title"><h1>Our products</h1></div>
-						{{-- <div class="section_subtitle">One most popular article</div> --}}
 					</div>
 				</div>
 			</div>
@@ -250,191 +180,27 @@
 							<!-- Single Article Slider -->
 							<div class="single_slider_container">
 								<div class="owl-carousel owl-theme single_slider">
-									
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image">
-												<a class="my-fancy" href="images/products/product_1.jpg"><img src="images/products/product_1.jpg" alt=""></a>
-											</div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
+									@if (!$getProducts->isEmpty())
+										@foreach ($getProducts as $product)
+										<!-- Slide -->
+										<div class="owl-item">
+											<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+												<div class="single_article_image">
+													<a class="my-fancy" href="{{asset((isset($product) && $product->image != '')? 'images/home_page/'.$product->image : 'images/home_page/noimage.jpg')}}">
+														<img src="{{asset((isset($product) && $product->image != '')? 'images/home_page/'.$product->image : 'images/home_page/no_image.jpg')}}" alt=""></a>
+												</div>
+												<div class="single_article_content">
+												<div class="single_article_title"><a href="#">{{$product->title}}</a></div>
+													<div class="single_article_text">
+													<p>{{$product->description}}</p>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_2.jpg"><img src="images/products/product_2.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_3.jpg"><img src="images/products/product_3.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_4.jpg"><img src="images/products/product_4.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_5.jpg"><img src="images/products/product_5.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_6.jpg"><img src="images/products/product_6.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_7.jpg"><img src="images/products/product_7.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_8.jpg"><img src="images/products/product_8.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_9.jpg"><img src="images/products/product_9.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_10.jpg"><img src="images/products/product_10.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_11.jpg"><img src="images/products/product_11.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_12.jpg"><img src="images/products/product_12.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
-									<!-- Slide -->
-									<div class="owl-item">
-										<div class="single_article d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-											<div class="single_article_image"><a class="my-fancy" href="images/products/product_13.jpg"><img src="images/products/product_13.jpg" alt=""></a></div>
-											<div class="single_article_content">
-												<div class="single_article_title"><a href="#">Donec egestas egestas quam non</a></div>
-												<div class="single_article_text">
-													<p>Nulla tincidunt elementum mauris, id suscipit ipsum posuere eget. Maecenas blandit tempus massa, a bibendum eros facilisis eu. Suspendisse fermentum pretium lectus, nec vehicula tortor. Aenean laoreet diam non lorem porta pharetra. Nam nec tellus nec tellus bibendum tincidunt vitae a leo. Praesent eu urna auctor dolor convallis suscipit.</p>
-													<p>Quisque consequat porta lobortis. Proin pulvinar magna id tellus sagittis, nec euismod tellus laoreet. Nam lorem libero, fringilla ut dolor vitae, elementum pharetra ligula. Quisque tempor tristique ante.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-	
+										@endforeach
+									@else
+										<p class="owl-carousel owl-theme single_slider" style="color:black;">Oops! No post found!</p>
+									@endif
 								</div>
 							</div>
 						</div>
@@ -464,54 +230,27 @@
 						<!-- Testimonials Slider -->
 						<div class="testimonials_slider_container">
 							<div class="owl-carousel owl-theme testimonials_slider">
-								
-								<!-- Slide -->
-								<div class="owl-item">
-									<div class="testimonial_container">
-										<div class="testimonial d-flex flex-column align-items-center justify-content-center text-center trans_200">
-											<div class="testimonial_image"><img src="images/author_1.jpg" alt=""></div>
-											<div class="testimonial_title">The perfect hair</div>
-											<div class="testimonial_text">
-												<p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit.</p>
+								@if (!$getTestimonials->isEmpty())
+									@foreach ($getTestimonials as $testimonial)
+									<!-- Slide -->
+									<div class="owl-item">
+										<div class="testimonial_container">
+											<div class="testimonial d-flex flex-column align-items-center justify-content-center text-center trans_200">
+												<div class="testimonial_image"><img src="{{asset((isset($testimonial) && $testimonial->image != '')? 'images/home_page/'.$testimonial->image : 'images/home_page/no_image.jpg')}}" alt=""></div>
+											<div class="testimonial_title">{{$testimonial->title}}</div>
+												<div class="testimonial_text">
+												<p>{{$testimonial->description}}</p>
+												</div>
+												<div class="testimonial_author">{{$testimonial->client_name}}, Client</div>
 											</div>
-											<div class="testimonial_author">Jessica Smith, Client</div>
 										</div>
 									</div>
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item">
-									<div class="testimonial_container">
-										<div class="testimonial d-flex flex-column align-items-center justify-content-center text-center trans_200">
-											<div class="testimonial_image"><img src="images/author_2.jpg" alt=""></div>
-											<div class="testimonial_title">I just love my hair</div>
-											<div class="testimonial_text">
-												<p>Mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna. Pellentesque sit amet tellus.</p>
-											</div>
-											<div class="testimonial_author">Jessica Smith, Client</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item">
-									<div class="testimonial_container">
-										<div class="testimonial d-flex flex-column align-items-center justify-content-center text-center trans_200">
-											<div class="testimonial_image"><img src="images/author_3.jpg" alt=""></div>
-											<div class="testimonial_title">The best hair salon</div>
-											<div class="testimonial_text">
-												<p>Retiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit.</p>
-											</div>
-											<div class="testimonial_author">Jessica Smith, Client</div>
-										</div>
-									</div>
-								</div>
-
+									@endforeach
+								@else
+									<p>Oops! No post found!</p>
+								@endif
 							</div>
 						</div>
-						<!-- <div class="testimonials_more">
-							<div class="testimonials_more_button ml-auto mr-auto trans_200"><a href="#">load more</a></div>
-						</div> -->
 					</div>
 				</div>
 			</div>

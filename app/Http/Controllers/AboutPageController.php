@@ -16,7 +16,7 @@ class AboutPageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.pages_about');
+        return view('admin.about.aboutPage_create');
 
     }
 
@@ -38,7 +38,13 @@ class AboutPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'description' => 'required',
+            'category' => 'required',
+            
+        ]);
+
+
         $content = new AboutPage;
         $content->title = $request->input('title');
         $content->description = $request->input('description');
@@ -53,7 +59,7 @@ class AboutPageController extends Controller
 
         //dd($content);
         $content->save();
-        return back();
+        return back()->with('success', 'content added');
     }
 
     /**
@@ -77,7 +83,7 @@ class AboutPageController extends Controller
     {
         //
         $getId = AboutPage::findOrFail($id);
-        return view('admin.edit.edit_about', compact('getId'));
+        return view('admin.about.aboutPage_edit', compact('getId'));
     }
 
     /**
@@ -95,8 +101,21 @@ class AboutPageController extends Controller
         $getId->image = $request->input('image');
         $getId->category = $request->input('category');
         $getId->description = $request->input('description');
+
+        if($request->hasFile('image')){
+            $oldImage = '/images/home_page/'.$getId->image;
+            if(File::exists($oldImage)){
+                File::delete($oldImage);
+            }
+            $image = $request->file('image');
+            $contentImage = $getId->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/about_page/' . $contentImage ) );
+            $getId->image = $contentImage;
+
+        }
+
         $getId->save();
-        return back();
+        return back()->with('success', 'content updated');
     }
 
     /**
@@ -105,8 +124,10 @@ class AboutPageController extends Controller
      * @param  \App\AboutPage  $aboutPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AboutPage $aboutPage)
+    public function destroy($id)
     {
-        //
+        $getId = AboutPage::findOrFail($id);
+        $getId->delete();
+        return redirect('admin/pages/indexAbout')->with('delete', 'content removed');
     }
 }

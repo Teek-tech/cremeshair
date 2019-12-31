@@ -25,17 +25,6 @@
       <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
     <!-- Navbar -->
     @include('admin.layouts.navbar')
@@ -67,9 +56,16 @@
                 <div class="card-body-icon">
                   <i class="fas fa-users"></i>
                 </div>
-                <div class="mr-5">There are 6 sales sepresentatives!</div>
+                @if ($getTotalSalesRep === 1)
+                  <div class="mr-5">There is {{$getTotalSalesRep}} available sales sepresentative!</div>
+                @elseif($getTotalSalesRep > 1)
+                  <div class="mr-5">There are {{$getTotalSalesRep}} available sales sepresentatives!</div>
+                @else
+                  <div class="mr-5">There are no available sales sepresentatives!</div>
+                @endif
+                {{-- <div class="mr-5">There are {{$getTotalSalesRep}} sales sepresentatives!</div> --}}
               </div>
-            <a class="card-footer text-white clearfix small z-1" href="{{asset('adminSalesRep')}}">
+            <a class="card-footer text-white clearfix small z-1" href="{{route('admin.salesRep.index')}}">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -83,9 +79,15 @@
                 <div class="card-body-icon">
                   <i class="fas fa-boxes"></i>
                 </div>
-                <div class="mr-5">There are 12 availble products!</div>
+                @if ($getProductPageContent->count() === 1)
+                  <div class="mr-5">There is {{$getProductPageContent->count()}} availble product!</div>
+                @elseif ($getProductPageContent->count() > 1)
+                  <div class="mr-5">There are {{$getProductPageContent->count()}} availble products!</div>
+                @else
+                  <div class="mr-5">There are no availble products!</div>
+                @endif
               </div>
-            <a class="card-footer text-white clearfix small z-1" href="{{asset('adminProducts')}}">
+              <a class="card-footer text-white clearfix small z-1" href="{{route('admin.products.index')}}">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -93,38 +95,6 @@
               </a>
             </div>
           </div>
-          {{-- <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">123 New Orders!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div> --}}
-          {{-- <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div> --}}
         </div>
 
         <!-- Area Chart Example-->

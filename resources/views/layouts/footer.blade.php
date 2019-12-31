@@ -19,15 +19,29 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    <div class="contact_info_content">31 Isiopko Street, Dline, Port Harcourt, Rivers State Nigeria</div>
+                                    @if ($getContact->address != "")
+                                        <div class="contact_info_content">{{$getContact->address}}</div>
+                                    @else
+                                        <p class="contact_info_content">Oops! No address available at this time</p>
+                                    @endif
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    <div class="contact_info_content">203-808-8613</div>
+                                    @if ($getContact->phone !="")
+                                    <div class="contact_info_content">{{$getContact->phone}}</div>
+                                    @else
+                                        <p class="contact_info_content">Oops! no phone number available at this time</p>
+                                    @endif
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/message.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    <div class="contact_info_content">milothemes@gmail.com</div>
+                                    @if ($getContact->email != "")
+                                    <div class="contact_info_content">{{$getContact->email}}</div>
+                                    @else
+                                        <div>
+                                            <p class="contact_info_content"> Oops! no email available at this time</p>
+                                        </div>
+                                    @endif
                                 </li>
                             </ul>
                         </div>

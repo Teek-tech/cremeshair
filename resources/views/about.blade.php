@@ -65,7 +65,11 @@
 				<div class="col">
 					<div class="section_title_container section_title_container1">
 						<div class="section_title"><h2>Who are we?</h2></div>
-						<p>We specialize on premium quality 100% virgin Vietnamese hair, Our hair products are high quality and prestigious ones that are collected directly from young Vietnamese women without dyed process or soaking in chemicals. The striking features about our hair is that it is soft, silky, shiny and it can be used for different purposes.</p>
+						@if ($getAboutUsContent != "")
+							<p>{{$getAboutUsContent->description}}</p>
+						@else
+							<p>Oops! No post found!</p>
+						@endif
 					</div>
 				</div>
             </div>
@@ -73,7 +77,11 @@
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h2>Our vision</h2></div>
-                        <p>Our vision is to bring to the market valuable product with confidence that our products will meet international standards, grow to become an international trademark and give value an satisfaction to our customers.</p>
+						@if ($getOurVisionContent != "")
+							<p>{{$getOurVisionContent->description}}</p>
+						@else
+							<p>Oops! No post found!</p>
+						@endif
                     </div>
                 </div>
             </div>
@@ -81,7 +89,11 @@
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h2>About our hair</h2></div>
-                        <p>Vietnamese women hair is considered one of the world's most beautiful and quality hair,our company partners with the vietnamese company to collect hairs from different provinces of the coountry and then process into finsihed products according to customers' requirement and the standard that is for the international market.</p>
+						@if ($getAboutOurHair != "")
+							<p>{{$getAboutOurHair->description}}</p>
+						@else
+							<p>Oops! No post found!</p>
+						@endif
                     </div>
                 </div>
 			</div>
@@ -238,149 +250,141 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12" style="background-color: white;">
+	<div class="col-md-12 pb-3" style="background-color: white;">
 		<div class="container">
-				{{-- sales rep area --}}
+			{{-- sales rep area --}}
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container">
+						<div class="section_title"><h2>Our Sales representatives</h2></div>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sapiente quisquam eaque veritatis! Nulla, optio.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row sales-rep-area">
 				<div class="row">
-					<div class="col">
-						<div class="section_title_container">
-							<div class="section_title"><h2>Our Sales representatives</h2></div>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sapiente quisquam eaque veritatis! Nulla, optio.</p>
+					@if (!$getSalesRep->isEmpty())
+						@foreach ($getSalesRep as $salesRep)
+							<div class="col-md-4 sales-rep">
+								<div class="card">
+									<img src="{{asset((isset($salesRep) && $salesRep->image != '')? 'images/sales_rep/'.$salesRep->image : 'images/sales_rep/no_image.jpg')}}" class="card-img-top" alt="...">
+									<div class="card-body">
+										<div class="rep_name">
+										<h5>{{$salesRep->name}}</h5>
+										</div>
+										<div class="rep_phone">
+											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+										<P class="rep_phone_text">{{$salesRep->phone}}</P>
+										</div>
+										<div class="rep_mail">
+											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+										<p class="rep_mail_text">{{$salesRep->email}}</p>
+										</div>
+										<a href="#" class="card-link btn btn-primary">Send mail</a>
+									</div>
+								</div>
+							</div>
+						@endforeach
+					@else
+						<p>Oops! No post found!</p>
+					@endif
+					{{-- <div class="col-md-4 sales-rep">
+						<div class="card">
+							<img src="images/sales_rep/sales_rep2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="rep_name">
+									<h5>Lorem Ipsum</h5>
+								</div>
+								<div class="rep_phone">
+									<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<P class="rep_phone_text">0111112332525</P>
+								</div>
+								<div class="rep_mail">
+									<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<p class="rep_mail_text">blah@blah.com</p>
+								</div>
+								<a href="#" class="card-link btn btn-primary">Send mail</a>
+							</div>
 						</div>
-					</div>
+					</div> --}}
+					{{-- <div class="col-md-4 sales-rep">
+						<div class="card">
+							<img src="images/sales_rep/sales_rep3.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="rep_name">
+									<h5>Lorem Ipsum</h5>
+								</div>
+								<div class="rep_phone">
+									<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<P class="rep_phone_text">0111112332525</P>
+								</div>
+								<div class="rep_mail">
+									<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<p class="rep_mail_text">blah@blah.com</p>
+								</div>
+								<a href="#" class="card-link btn btn-primary">Send mail</a>
+							</div>
+						</div>
+					</div> --}}
+					{{-- <div class="col-md-4 sales-rep">
+						<div class="card">
+							<img src="images/sales_rep/sales_rep4.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="rep_name">
+									<h5>Lorem Ipsum</h5>
+								</div>
+								<div class="rep_phone">
+									<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<P class="rep_phone_text">0111112332525</P>
+								</div>
+								<div class="rep_mail">
+									<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<p class="rep_mail_text">blah@blah.com</p>
+								</div>
+								<a href="#" class="card-link btn btn-primary">Send mail</a>
+							</div>
+						</div>
+					</div> --}}
+					{{-- <div class="col-md-4 sales-rep">
+						<div class="card">
+							<img src="images/sales_rep/sales_rep5.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="rep_name">
+									<h5>Lorem Ipsum</h5>
+								</div>
+								<div class="rep_phone">
+									<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<P class="rep_phone_text">0111112332525</P>
+								</div>
+								<div class="rep_mail">
+									<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<p class="rep_mail_text">blah@blah.com</p>
+								</div>
+								<a href="#" class="card-link btn btn-primary">Send mail</a>
+							</div>
+						</div>
+					</div> --}}
+					{{-- <div class="col-md-4 sales-rep">
+						<div class="card">
+							<img src="images/sales_rep/sales_rep6.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="rep_name">
+									<h5>Lorem Ipsum</h5>
+								</div>
+								<div class="rep_phone">
+									<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<P class="rep_phone_text">0111112332525</P>
+								</div>
+								<div class="rep_mail">
+									<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
+									<p class="rep_mail_text">blah@blah.com</p>
+								</div>
+								<a href="#" class="card-link btn btn-primary">Send mail</a>
+							</div>
+						</div>
+					</div> --}}
 				</div>
-				<div class="row sales-rep-area">
-					
-						<div class="row">
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep1.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep2.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep3.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep4.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep5.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 sales-rep">
-								<div class="card">
-									<img src="images/sales_rep/sales_rep6.jpg" class="card-img-top" alt="...">
-									<div class="card-body">
-										{{-- <h5 class="card-title">Card title</h5> --}}
-										{{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-										<div class="rep_name">
-											<h5>Lorem Ipsum</h5>
-										</div>
-										<div class="rep_phone">
-											<img class="rep_phone_icon" src="images/phone-call1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<P class="rep_phone_text">0111112332525</P>
-										</div>
-										<div class="rep_mail">
-											<img class="rep_phone_icon" src="images/message1.svg" alt="https://www.flaticon.com/authors/freepik">
-											<p class="rep_mail_text">blah@blah.com</p>
-										</div>
-										<a href="#" class="card-link btn btn-primary">Send mail</a>
-									</div>
-								</div>
-							</div>
-						
-					</div>
-				</div>
+			</div>
 		</div>
 	</div>
 	<!-- Footer -->

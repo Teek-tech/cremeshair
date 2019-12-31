@@ -17,7 +17,7 @@ class ContactPageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.pages_contact');
+        return view('admin.contact.contact_create');
     }
 
     /**
@@ -38,14 +38,21 @@ class ContactPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'address' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+
+
         $contact = new ContactPage;
         $contact->address = $request->input('address');
         $contact->phone = $request->input('phone');
+        $contact->email = $request->input('email');
 
         //dd($contact);
         $contact->save();
-        return back();
+        return back()->with('success', 'contact added');
 
     }
 
@@ -70,7 +77,7 @@ class ContactPageController extends Controller
     {
         //
         $getId = ContactPage::findOrFail($id);
-        return view('admin.edit.edit_contact', compact('getId'));
+        return view('admin.contact.contact_edit', compact('getId'));
     }
 
     /**
@@ -85,8 +92,9 @@ class ContactPageController extends Controller
         $getId = ContactPage::findOrFail($id);
         $getId->address = $request->input('address');
         $getId->phone = $request->input('phone');
+        $getId->email = $request->input('email');
         $getId->save();
-        return back();
+        return back()->with('success', 'contact updated');
     }
 
     /**
@@ -95,8 +103,10 @@ class ContactPageController extends Controller
      * @param  \App\ContactPage  $contactPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ContactPage $contactPage)
+    public function destroy($id)
     {
-        //
+        $getId = ContactPage::findOrFail($id);
+        $getId->delete();
+        return redirect('admin/pages/indexContact')->with('delete', 'contact removed');
     }
 }

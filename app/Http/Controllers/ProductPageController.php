@@ -16,7 +16,7 @@ class ProductPageController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.pages_products');
+        return view('admin.products.products_create');
     }
 
     /**
@@ -37,7 +37,16 @@ class ProductPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request, [
+            'name' => 'required',
+            'color' => 'required',
+            'size' => 'required',
+            'weight' => 'required',
+            'length' => 'required',
+            'image' => 'required|image'
+        ]);
+
         $product = new ProductPage;
         $product->name = $request->input('name');
         $product->color = $request->input('color');
@@ -54,7 +63,7 @@ class ProductPageController extends Controller
 
         // dd($product);
         $product->save();
-        return back();
+        return back()->with('success', 'product added');
     }
 
     /**
@@ -78,7 +87,7 @@ class ProductPageController extends Controller
     {
         //
         $getId = ProductPage::findOrFail($id);
-        return view('admin.edit.edit_products', compact('getId'));
+        return view('admin.products.products_edit', compact('getId'));
     }
 
     /**
@@ -97,8 +106,21 @@ class ProductPageController extends Controller
         $getId->size = $request->input('size');
         $getId->weight = $request->input('weight');
         $getId->length = $request->input('length');
+
+        if($request->hasFile('image')){
+            $oldImage = '/images/products/'.$getId->image;
+            if(File::exists($oldImage)){
+                File::delete($oldImage);
+            }
+            $image = $request->file('image');
+            $productImage = $product->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->save( public_path('/images/products/' . $productImage ) );
+            $product->image = $productImage;
+
+        }
+
         $getId->save();
-        return back();
+        return back()->with('success', 'product updated');
     }
 
     /**
@@ -107,8 +129,11 @@ class ProductPageController extends Controller
      * @param  \App\ProductPage  $productPage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductPage $productPage)
+    public function destroy($id)
     {
-        //
+        $getId = ProductPage::findOrFail($id);
+        $getId->delete();
+        return redirect('admin/pages/indexProducts')->with('delete', 'product removed');
+
     }
 }

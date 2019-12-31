@@ -12,64 +12,36 @@ class AdminPagesController extends Controller
 {
     //
     public function admin(){
+        $getTotalSalesRep = SalesRepPage::all()->count(); 
         $getHomePageContent = HomePage::all();
         $getProductPageContent = ProductPage::all();
-        return view('admin.index', compact('getHomePageContent', 'getProductPageContent'));
+        return view('admin.index', compact('getTotalSalesRep', 'getHomePageContent', 'getProductPageContent'));
 
     }
 
-    public function pagesHome(){
-        return view('admin.pages.pages_home');
+    public function indexHome(){
+        $getHomePageContent1 = HomePage::all()->first();
+        $getHomePageContent = HomePage::orderBy('id', 'desc')->get();
+        return view('admin.home.index_homePage', compact('getHomePageContent', 'getHomePageContent1'));
     }
 
-    public function pagesAbout(){
-        return view('admin.pages.pages_about');
-    }
-
-    public function pagesSalesRep(){
-        return view('admin.pages.pages_salesRep');
-    }
-
-    public function pagesProducts(){
-        return view('admin.pages.pages_products');
-    }
-
-    public function pagesContact(){
-        return view('admin.pages.pages_contact');
-    }
-
-    public function adminProducts(){
-        $getProductPageContent = ProductPage::all();
-        return view('admin.admin_products', compact('getProductPageContent'));
-    }
-
-    public function salesRep(){
-        $getSalesRep = SalesRepPage::all();
-        return view('admin.sales_rep', compact('getSalesRep'));
-    }
-
-    public function uploadsHome(){
-        $getHomePageContent = HomePage::all();
-        return view('admin.uploads.uploads_homePage', compact('getHomePageContent'));
-    }
-
-    public function uploadsAbout(){
+    public function indexAbout(){
         $getAboutPageContent = AboutPage::all();
-        return view('admin.uploads.uploads_aboutPage', compact('getAboutPageContent'));
+        return view('admin.about.index_aboutPage', compact('getAboutPageContent'));
     }
 
-    public function uploadsSalesRep(){
+    public function indexSalesRep(){
         $getSalesRep = SalesRepPage::all();
-        return view('admin.uploads.uploads_salesRep', compact('getSalesRep'));
+        return view('admin.salesRep.index_salesRep', compact('getSalesRep'));
     }
 
-    public function uploadsProducts(){
+    public function indexProducts(){
         $getProductPageContent = ProductPage::all();
-        return view('admin.uploads.uploads_productsPage', compact('getProductPageContent'));
+        return view('admin.products.index_products', compact('getProductPageContent'));
     }
 
-    public function uploadsContact(){
+    public function indexContact(){
         $getContactPageContent = ContactPage::all();
-        return view('admin.uploads.uploads_contactPage', compact('getContactPageContent'));
+        return view('admin.contact.index_contact', compact('getContactPageContent'));
     }
 }

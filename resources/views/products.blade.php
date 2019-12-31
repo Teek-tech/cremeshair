@@ -391,188 +391,26 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_1.jpg"><img class="card-img-top" src="images/products/product_1.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
+				@if (!$getProducts->isEmpty())
+					@foreach ($getProducts as $product)
+						<div class="col-md-4">
+							<div class="card product-gallery">
+								<a data-fancybox="group" class="my-fancy" href="{{asset((isset($product) && $product->image != '')? 'images/products/'.$product->image : 'images/products/noimage.jpg')}}"><img class="card-img-top" src="{{asset((isset($product) && $product->image != '')? 'images/products/'.$product->image : 'images/products/noimage.jpg')}}" alt=""></a>
+								<div class="card-body">
+								<h5 class="card-title">{{$product->name}}</h5>
+									<ul class="card-text">
+									<li><span style="font-weight:bold;">Color:</span> {{$product->color}}</li>
+									<li><span style="font-weight:bold;">Size:</span> {{$product->size}}</li>
+									<li><span style="font-weight:bold;">length:</span> {{$product->length}}</li>
+									<li><span style="font-weight:bold;">weight:</span> {{$product->weight}}</li>
+									</ul>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_2.jpg"><img class="card-img-top" src="images/products/product_2.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_3.jpg"><img class="card-img-top" src="images/products/product_3.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_4.jpg"><img class="card-img-top" src="images/products/product_4.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_5.jpg"><img class="card-img-top" src="images/products/product_5.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_6.jpg"><img class="card-img-top" src="images/products/product_6.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_7.jpg"><img class="card-img-top" src="images/products/product_7.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_8.jpg"><img class="card-img-top" src="images/products/product_8.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_9.jpg"><img class="card-img-top" src="images/products/product_9.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_10.jpg"><img class="card-img-top" src="images/products/product_10.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_11.jpg"><img class="card-img-top" src="images/products/product_11.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_12.jpg"><img class="card-img-top" src="images/products/product_12.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card product-gallery">
-						<a data-fancybox="group" class="my-fancy" href="images/products/product_13.jpg"><img class="card-img-top" src="images/products/product_13.jpg" alt=""></a>
-						<div class="card-body">
-							<h5 class="card-title">Lorem Ipsum</h5>
-							<ul class="card-text">
-								<li>Color</li>
-								<li>Size</li>
-								<li>Length</li>
-								<li>Weight</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+					@endforeach
+				@else
+					<p>Oops! There are no products available at this time, Please check later.</p>
+				@endif
 			</div>
 		</div>
 	</div>

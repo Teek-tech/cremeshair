@@ -12,19 +12,31 @@ class PagesController extends Controller
 {
     //
     public function home(){
-        $getHomePageContent = HomePage::all();//where('category', '=', 'home')->get();
-        return view('welcome', compact('getHomePageContent'));
+        $getMainHomeContent = HomePage::where('category', 'home')->first();
+        $getServicesContent = HomePage::where('category', 'services')->get();
+        $getProducts = HomePage::where('category', 'products')->get();
+        $getTestimonials = HomePage::where('category', 'testimonials')->get();
+        $getContact = ContactPage::all()->first();
+        return view('welcome', compact('getMainHomeContent', 'getServicesContent', 'getProducts', 'getTestimonials', 'getContact'));
     }
 
     public function about(){
-        return view('about');
+        $getAboutUsContent = AboutPage::where('category', 'who are we')->first();
+        $getOurVisionContent = AboutPage::where('category', 'our vision')->first();
+        $getAboutOurHair = AboutPage::where('category', 'about our hair')->first();
+        $getSalesRep = SalesRepPage::all();
+        $getContact = ContactPage::all()->first();
+        return view('about', compact('getAboutUsContent', 'getOurVisionContent', 'getAboutOurHair', 'getSalesRep', 'getContact'));
     }
 
     public function products(){
-        return view('products');
+        $getProducts = ProductPage::all();
+        $getContact = ContactPage::all()->first();
+        return view('products', compact('getProducts', 'getContact'));
     }
 
     public function contact(){
-        return view('contact');
+        $getContact = ContactPage::all()->first();
+        return view('contact', compact('getContact'));
     }
 }

@@ -65,10 +65,40 @@
 				<div class="contact_list">
 					<ul>
 						<li class="text-center">
-							<div><span><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></span>31 Isiokpo Street, Dline, Port Harcourt</div>
+							<div>
+								<span>
+									<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik">
+								</span>
+								@if ($getContact->address != "")
+									{{$getContact->address}}
+								@else
+									<p>Oops!Address no available</p>
+								@endif
+							</div>
 						</li>
 						<li class="text-center">
-							<div><span><img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik"></span>203-808-8613</div>
+							<div>
+								<span>
+									<img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik">
+								</span>
+								@if ($getContact->phone != "")
+									{{$getContact->phone}}
+								@else
+									<p>Oops! Phone number not available</p>
+								@endif
+							</div>
+						</li>
+						<li class="text-center">
+							<div>
+								<span>
+									<img src="images/message.svg" alt="https://www.flaticon.com/authors/freepik">
+								</span>
+								@if ($getContact->email !="")
+									{{$getContact->email}}
+								@else
+									<p>Oops! Email not available</p>
+								@endif
+							</div>
 						</li>
 					</ul>
 				</div>

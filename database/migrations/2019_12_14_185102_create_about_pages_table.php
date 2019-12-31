@@ -15,10 +15,10 @@ class CreateAboutPagesTable extends Migration
     {
         Schema::create('about_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('category');
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }
