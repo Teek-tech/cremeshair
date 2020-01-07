@@ -28,6 +28,6 @@ class ContactUsMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('From Admin')->view('email.contact_us');
+        return $this->subject('From Website')->view('email.contact_us');
     }
 }

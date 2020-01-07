@@ -1,10 +1,11 @@
-<b>Hello {{auth()->user()->name}},</b> 
+<b>Hello {{auth()->user()->name}},</b> <br>
+<b>New Message:</b> <br>
+<b>From: {{$contactUs['name']}}</b> <br>
+<b>Email: {{$contactUs['email']}}</b><br>
 
-<b>{{$user['name']}}</b>
-<b>{{$user['email']}}</b>
-<b>{{$user['subject']}}</b>
-<b>{{$user['message']}}</b>
-
+<b><u>{{$contactUs['subject']}}</u></b><br>
+<b><i>{{$contactUs['message']}}</i></b>
+<br><br>
 
 <a href="#">Cremes.</a>
 
