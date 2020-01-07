@@ -33,21 +33,16 @@
             </div>
         </div>
         <div class="app_content d-flex flex-column align-items-start justify-content-center">
+            @include('layouts.message')
             <div class="app_form_container text-right">
-                <form action="#" id="app_form" class="app_form">
-                    <input type="text" class="app_input" placeholder="Full Name" required="required">
-                    <input type="email" class="app_input" placeholder="Email Address" required="required">
-                    <input type="text" class="app_input" placeholder="Phone Number" required="required">
-                    <textarea class="app_input" placeholder="Please write your message here" required="required"></textarea>
-                    <!-- <input type="text" class="app_input" placeholder="Desired Date" required="required">
-                    <select class="app_input app_select">
-                        <option disabled="" selected="">Select Service</option>
-                        <option>Service 1</option>
-                        <option>Service 2</option>
-                        <option>Service 3</option>
-                        <option>Service 4</option>
-                    </select> -->
-                    <button class="app_form_button">submit</button>
+                <form action="{{route('contactUs.save')}}" method="POST" id="app_form" class="app_form">
+                    @csrf
+                    <input type="text" class="app_input" name="name" placeholder="Full Name" required="required">
+                    <input type="email" class="app_input" name="email" placeholder="Email Address" required="required">
+                    <input type="text" class="app_input" name="subject" placeholder="subject" required="required">
+                    <textarea class="app_input" name="message" placeholder="Please write your message here" required="required"></textarea>
+                    
+                    <button type="submit" class="app_form_button">submit</button>
                 </form>
             </div>
         </div>	

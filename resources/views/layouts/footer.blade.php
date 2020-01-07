@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="footer_title">Leave a comment</div>
-                    @include('admin.layouts.message')
+                    @include('layouts.message')
                     <div class="contact_form_container">
                         <form action="{{route('contactUs.save')}}" method="POST" id="contact_form" class="contact_form">
                             @csrf
@@ -75,7 +75,7 @@
                             </div>
                             <div><input type="text" placeholder="Subject" name="subject" class="contact_input"></div>
                             <div><textarea class="contact_input contact_textarea" name="message" placeholder="Message" required="required"></textarea></div>
-                            <button type="submit" class="contact_form_button">send message</button>
+                            <button type="submit" data-toggle="modal" data-target="#exampleModalCenter" class="contact_form_button">send message</button>
                         </form>
                     </div>
                 </div>
