@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ContactUs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUsMail;
 
 class ContactUsController extends Controller
 {
@@ -50,6 +52,10 @@ class ContactUsController extends Controller
 
         //dd($contactUs);
         $contactUs->save();
+        if($contactUs->save()){
+            Mail::to($contactUs->email)->send(new ContactUsMail($contactUs));
+            
+        }
         return back()->with('success', 'message sent!');
     }
 
