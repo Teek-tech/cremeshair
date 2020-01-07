@@ -50,7 +50,7 @@ class ContactUsController extends Controller
 
         //dd($contactUs);
         $contactUs->save();
-        return back()->with('success', 'message sent!');
+        return back()->with('success', 'Thank You! Message sent!');
     }
 
     /**
