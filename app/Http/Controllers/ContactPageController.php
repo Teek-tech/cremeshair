@@ -40,8 +40,8 @@ class ContactPageController extends Controller
     {
         $this->validate($request, [
             'address' => 'required',
-            'phone' => 'required',
-            'email' => 'required'
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:11|max:11',
+            'email' => 'required|email'
         ]);
 
 

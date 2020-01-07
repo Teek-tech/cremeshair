@@ -110,7 +110,23 @@
 	<!-- Footer -->
 
 	@include('layouts.footer')
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+	<script>
+		//map options
+		function initMap(){
+			var options = {
+				zoom: 14,
+				center: {lat:4.8025,lng:7.0018}
+			}
+			//new map
+			var map = new google.maps.Map(document.getElementById('map'), options);
+			//add marker
+			var marker = new google.maps.Marker({
+				postion:{lat:4.8028209,lng:7.0017063},
+				map:map
+			});
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkOk54mTyzU6hL9SjVHyryEc3iMBCH0fQ&callback=initMap" async defer></script>
 	<script src="{{asset('js/contact.js')}}"></script>
 </body>
 </html>

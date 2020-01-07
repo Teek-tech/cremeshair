@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use File;
 use App\Models\ProductPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -113,9 +113,9 @@ class ProductPageController extends Controller
                 File::delete($oldImage);
             }
             $image = $request->file('image');
-            $productImage = $product->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
+            $productImage = $getId->category.'_image'.time() . '.' . $image->getClientOriginalExtension();
             Image::make($image)->save( public_path('/images/products/' . $productImage ) );
-            $product->image = $productImage;
+            $getId->image = $productImage;
 
         }
 

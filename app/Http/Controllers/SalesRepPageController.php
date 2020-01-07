@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use File;
 use App\Models\SalesRepPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -41,7 +41,7 @@ class SalesRepPageController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:sales_rep_pages',
-            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:11|max:11'
         ]);
 
         $salesRep = new SalesRepPage;

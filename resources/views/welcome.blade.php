@@ -124,7 +124,7 @@
 				<div class="col-lg-9">
 					<div class="section_title_container">
 						<div class="section_title"><h1>Our Services</h1></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, laudantium.</p>
 					</div>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 									<div class="owl-item">
 										<!-- Service -->
 										<div class="service d-flex flex-row align-items-center justify-content-start trans_200">
-											<div class="service_icon"><div><img src="images/mirror.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
+											<div class="service_icon"><div><img src="images/woman.svg" class="svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
 											<div class="service_content">
 												<div class="service_title trans_200">{{$service->title}}</div>
 												<div class="service_text trans_200">

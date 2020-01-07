@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use File;
 use App\Models\AboutPage;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;

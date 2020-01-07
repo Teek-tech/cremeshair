@@ -16,20 +16,8 @@
 </head>
 
 <body id="page-top">
-
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
-
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
-
-
-    <!-- Navbar -->
-    @include('admin.layouts.navbar')
-
-  </nav>
+  <!-- Navbar -->
+  @include('admin.layouts.navbar')
 
   <div id="wrapper">
 
@@ -86,7 +74,7 @@
                     <div class="form-group col-md-6">
                       <label for="">Category</label>
                       <select name="category" id=""  class="form-control">
-                       <option label="Choose"></option>
+                        <option label="Choose"></option>
                         <option value="home">Home</option>
                         <option value="services">Services</option>
                         <option value="products">Products</option>
