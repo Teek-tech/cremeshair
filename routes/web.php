@@ -23,6 +23,9 @@ Route::get('about', 'PagesController@about');
 Route::get('products', 'PagesController@products');
 Route::get('contact', 'PagesController@contact');
 
+
+
+Route::group(['middleware' => ['isAdmin', 'auth']], function () {
 // admin page routes
 Route::get('admin', 'AdminPagesController@admin')->name('admin.index');
 
@@ -82,7 +85,11 @@ Route::get('admin/contact/{id}/edit', 'ContactPageController@edit')->name('admin
 Route::patch('admin/contact/{id}/edit', 'ContactPageController@update')->name('admin.edit.contact_update');
 //contact page delete
 Route::delete('admin/contact/{id}/delete', 'ContactPageController@destroy')->name('admin.contact.delete');
+Route::get('/home', 'HomeController@index')->name('home');
+});
 
 
+
+Auth::routes();
 
 
