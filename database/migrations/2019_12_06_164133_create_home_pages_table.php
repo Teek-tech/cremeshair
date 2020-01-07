@@ -15,11 +15,11 @@ class CreateHomePagesTable extends Migration
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('description');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('category');
-            $table->integer('rank');
+            $table->string('category')->nullable();
+            $table->integer('rank')->nullable();
             $table->timestamps();
         });
     }

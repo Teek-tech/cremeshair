@@ -16,19 +16,8 @@
 </head>
 
 <body id="page-top">
-
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
-
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
-
     <!-- Navbar -->
     @include('admin.layouts.navbar')
-
-  </nav>
 
   <div id="wrapper">
 
@@ -97,41 +86,41 @@
                       <a href="{{route('admin.edit.homepage-content', $content->id)}}" class="mr-3 btn btn-info">Edit</a>
                       <button type="button" class="btn btn-danger" data-contentId="{{$content->id}}" data-toggle="modal" data-target="#delete">Delete</button>
                     </td>
+                    <!-- Modal -->
+                    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete content</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <form action="{{route('admin.homepage.delete', $content->id)}}" method="post">
+                            @csrf
+                            @method("DELETE")
+                            <div class="modal-body">
+                              Are you sure?
+                              <input type="hidden" name="about_id" id="content_id" value="{{$content->id}}">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn btn-danger">Delete</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
             </div>
           </div>
-          {{-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> --}}
         </div>
 
         
-        <!-- Modal -->
-        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete content</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <form action="{{route('admin.homepage.delete', $getHomePageContent1->id)}}" method="post">
-                @csrf
-                @method("DELETE")
-                <div class="modal-body">
-                  Are you sure?
-                  <input type="hidden" name="about_id" id="content_id" value="{{$getHomePageContent1->id}}">
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-danger">Delete</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <!-- /.container-fluid -->
 

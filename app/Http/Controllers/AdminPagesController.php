@@ -20,9 +20,8 @@ class AdminPagesController extends Controller
     }
 
     public function indexHome(){
-        $getHomePageContent1 = HomePage::all()->first();
         $getHomePageContent = HomePage::orderBy('id', 'desc')->get();
-        return view('admin.home.index_homePage', compact('getHomePageContent', 'getHomePageContent1'));
+        return view('admin.home.index_homePage', compact('getHomePageContent'));
     }
 
     public function indexAbout(){
