@@ -3,7 +3,7 @@
 <b>From: {{$contactUs['name']}}</b> <br>
 <b>Email: {{$contactUs['email']}}</b><br><br>
 
-<b><u>{{$contactUs['subject']}}</u></b>
+<p><u>{{$contactUs['subject']}}</u></p>
 <i>{{$contactUs['message']}}</i>
 <br><br>
 
