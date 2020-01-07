@@ -7,7 +7,7 @@
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h1>Get in touch</h1></div>
-                        <p>Your feedbacks are important to us, they help us serve you better.</p>
+                        <p>We are online 24/7.</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->address != "")
+                                    @if ($getContact && $getContact->address != "")
                                         <div class="contact_info_content">{{$getContact->address}}</div>
                                     @else
                                         <div class="contact_info_content">Oops! No address available at this time</div>
@@ -27,16 +27,16 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->phone !="")
-                                        <div class="contact_info_content">{{$getContact->phone}}</div>
+                                    @if ($getContact && $getContact->phone !="")
+                                    <div class="contact_info_content">{{$getContact->phone}}</div>
                                     @else
                                         <p class="contact_info_content">Oops! no phone number available at this time</p>
                                     @endif
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/message.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->email != "")
-                                        <div class="contact_info_content">{{$getContact->email}}</div>
+                                    @if ($getContact && $getContact->email != "")
+                                    <div class="contact_info_content">{{$getContact->email}}</div>
                                     @else
                                         <div>
                                             <p class="contact_info_content"> Oops! no email available at this time</p>
@@ -84,8 +84,9 @@
     </div>
     <div class="footer_bar d-flex flex-row align-items-center justify-content-start">
         <div class="copyright">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Teek-Tech</a>
-        </div>
+
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  <a href="https://cremesltd.com" target="_blank">Cremes Ltd.</a>
+</div>
     </div>
 </footer>
 </div>
