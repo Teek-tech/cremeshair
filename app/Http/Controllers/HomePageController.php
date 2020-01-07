@@ -95,11 +95,10 @@ class HomePageController extends Controller
         $getId->description = $request->input('description');
         $getId->category = $request->input('category');
         $getId->client_name = $request->input('client_name');
-        $getId->image = $request->input('image');
         $getId->rank = $request->input('rank');
 
         if($request->hasFile('image')){
-            $oldImage = '/images/home_page/'.$getId->image;
+            $oldImage = public_path('/images/home_page/'.$getId->image);
             if(File::exists($oldImage)){
                 File::delete($oldImage);
             }

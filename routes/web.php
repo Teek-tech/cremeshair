@@ -22,6 +22,7 @@ Route::get('/', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('products', 'PagesController@products');
 Route::get('contact', 'PagesController@contact');
+Route::post('contactsUs', 'ContactUsController@store')->name('contactUs.save');
 
 // admin page routes
 Route::get('admin', 'AdminPagesController@admin')->name('admin.index');
@@ -82,6 +83,7 @@ Route::get('admin/contact/{id}/edit', 'ContactPageController@edit')->name('admin
 Route::patch('admin/contact/{id}/edit', 'ContactPageController@update')->name('admin.edit.contact_update');
 //contact page delete
 Route::delete('admin/contact/{id}/delete', 'ContactPageController@destroy')->name('admin.contact.delete');
+
 
 
 

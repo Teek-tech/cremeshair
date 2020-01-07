@@ -59,21 +59,23 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="footer_title">Leave a comment</div>
+                    @include('admin.layouts.message')
                     <div class="contact_form_container">
-                        <form action="#" id="contact_form" class="contact_form">
+                        <form action="{{route('contactUs.save')}}" method="POST" id="contact_form" class="contact_form">
+                            @csrf
                             <div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Name" class="contact_input" required="required">
+                                        <input type="text" placeholder="Name" name="name" class="contact_input" required="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="email" placeholder="E-mail" class="contact_input" required="required">
+                                        <input type="email" placeholder="E-mail" name="email" class="contact_input" required="required">
                                     </div>
                                 </div>
                             </div>
-                            <div><input type="text" placeholder="Subject" class="contact_input"></div>
-                            <div><textarea class="contact_input contact_textarea" placeholder="Message" required="required"></textarea></div>
-                            <button class="contact_form_button">send message</button>
+                            <div><input type="text" placeholder="Subject" name="subject" class="contact_input"></div>
+                            <div><textarea class="contact_input contact_textarea" name="message" placeholder="Message" required="required"></textarea></div>
+                            <button type="submit" class="contact_form_button">send message</button>
                         </form>
                     </div>
                 </div>

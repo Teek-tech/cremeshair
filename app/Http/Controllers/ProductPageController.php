@@ -100,7 +100,6 @@ class ProductPageController extends Controller
     public function update(Request $request, $id)
     {
         $getId = ProductPage::findOrFail($id);
-        $getId->image = $request->input('image');
         $getId->name = $request->input('name');
         $getId->color = $request->input('color');
         $getId->size = $request->input('size');
@@ -108,7 +107,7 @@ class ProductPageController extends Controller
         $getId->length = $request->input('length');
 
         if($request->hasFile('image')){
-            $oldImage = '/images/products/'.$getId->image;
+            $oldImage = public_path('/images/products/'.$getId->image);
             if(File::exists($oldImage)){
                 File::delete($oldImage);
             }

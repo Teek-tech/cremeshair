@@ -98,12 +98,11 @@ class AboutPageController extends Controller
         //
         $getId = AboutPage::findOrFail($id);
         $getId->title = $request->input('title');
-        $getId->image = $request->input('image');
         $getId->category = $request->input('category');
         $getId->description = $request->input('description');
 
         if($request->hasFile('image')){
-            $oldImage = '/images/home_page/'.$getId->image;
+            $oldImage = public_path('/images/home_page/'.$getId->image);
             if(File::exists($oldImage)){
                 File::delete($oldImage);
             }

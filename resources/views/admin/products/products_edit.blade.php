@@ -47,7 +47,7 @@
               @method('PATCH')
               <div class="form-group">
                   <label for="image">Product Image</label>
-              <input type="file" name="image" class="form-control col-md-6" value="{{$getId->image}}">
+              <input type="file" name="image" class="form-control col-md-6" >
                 </div>
 
                 <div class="form-group">

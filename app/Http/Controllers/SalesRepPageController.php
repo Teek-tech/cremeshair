@@ -96,12 +96,11 @@ class SalesRepPageController extends Controller
     {
         $getId = SalesRepPage::findOrFail($id);
         $getId->name = $request->input('name');
-        $getId->image = $request->input('image');
         $getId->email = $request->input('email');
         $getId->phone = $request->input('phone');
 
         if($request->hasFile('image')){
-            $oldImage = '/images/sales_rep/'.$getId->image;
+            $oldImage = public_path('/images/sales_rep/'.$getId->image);
             if(File::exists($oldImage)){
                 File::delete($oldImage);
             }
