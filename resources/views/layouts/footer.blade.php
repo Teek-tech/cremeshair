@@ -7,7 +7,7 @@
                 <div class="col">
                     <div class="section_title_container">
                         <div class="section_title"><h1>Get in touch</h1></div>
-                        <p>Maximus mauris sceleri sque, at rutrum nulla dictum.</p>
+                        <p>We are online 24/7.</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-start justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->address != "")
+                                    @if ($getContact && $getContact->address != "")
                                         <div class="contact_info_content">{{$getContact->address}}</div>
                                     @else
                                         <p class="contact_info_content">Oops! No address available at this time</p>
@@ -27,7 +27,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->phone !="")
+                                    @if ($getContact && $getContact->phone !="")
                                     <div class="contact_info_content">{{$getContact->phone}}</div>
                                     @else
                                         <p class="contact_info_content">Oops! no phone number available at this time</p>
@@ -35,7 +35,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div><div class="contact_info_icon"><img src="images/message.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-                                    @if ($getContact->email != "")
+                                    @if ($getContact && $getContact->email != "")
                                     <div class="contact_info_content">{{$getContact->email}}</div>
                                     @else
                                         <div>
@@ -81,9 +81,10 @@
         </div>
     </div>
     <div class="footer_bar d-flex flex-row align-items-center justify-content-start">
-        <div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+        <div class="copyright">
+
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  <a href="https://cremesltd.com" target="_blank">Cremes Ltd.</a>
+</div>
     </div>
 </footer>
 </div>

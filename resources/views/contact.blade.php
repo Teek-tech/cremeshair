@@ -69,7 +69,7 @@
 								<span>
 									<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/freepik">
 								</span>
-								@if ($getContact->address != "")
+								@if ($getContact && $getContact->address != "")
 									{{$getContact->address}}
 								@else
 									<p>Oops!Address no available</p>
@@ -81,7 +81,7 @@
 								<span>
 									<img src="images/phone-call.svg" alt="https://www.flaticon.com/authors/freepik">
 								</span>
-								@if ($getContact->phone != "")
+								@if ($getContact && $getContact->phone != "")
 									{{$getContact->phone}}
 								@else
 									<p>Oops! Phone number not available</p>
@@ -93,7 +93,7 @@
 								<span>
 									<img src="images/message.svg" alt="https://www.flaticon.com/authors/freepik">
 								</span>
-								@if ($getContact->email !="")
+								@if ($getContact && $getContact->email !="")
 									{{$getContact->email}}
 								@else
 									<p>Oops! Email not available</p>
